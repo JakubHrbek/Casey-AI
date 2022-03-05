@@ -1,5 +1,5 @@
 def run_Casey():    #tohle asi zmenime UwU
-  command = take_command()
+  command = take_Command()
   print(command)
   if 'play' in command:    #zahrat pisnicku
     song = command.replace('play', '')
