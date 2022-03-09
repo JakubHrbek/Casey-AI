@@ -1,11 +1,14 @@
+###Import potřebných modulů (Python/PIP)
 import pyttsx3
 import speech_recognition as sr
 import wikipedia
-import pyjokes
-import random
 import requests
 import datetime
+import pyjokes
+import random2
+import requests
 import os
+
 
 
 engine = pyttsx3.init('sapi5')
@@ -37,7 +40,6 @@ while True:
         speak("Hello Machine! My  Name is Casey")
     elif 'are you single' in query:
         answers = ['I am in a relationship with wifi','No, I love spending time thinking about my crush wifi']
-        speak(random.choice(answers))
     elif 'hate' in query:
         speak("I hate when people called me a machine")
     elif 'love' in query:
@@ -56,6 +58,7 @@ while True:
     elif 'joke' in query:
         speak(pyjokes.get_joke())
     
+
     ### noviny
     elif 'news' in query:
             def trndnews(): 
@@ -79,15 +82,26 @@ while True:
             trndnews() 
 
 
+  
     ### hudba
     elif 'music' in query:
-        music_dir = 'E:\\music'
+
+        music_dir = '\music'
         songs = os.listdir(music_dir)
-        song = random.randint(0,len(songs)-1)
+        song = random2.randint(0,len(songs)-1)
         print(songs[song])  
         speak(f"playing{songs[song]}")
         os.startfile(os.path.join(music_dir, songs[0]))
 
+    elif "bye" in query:
+        speak("Have a nice day ! ")
+        break
+    elif "end" in query:
+        speak("Have a nice day ! ")
+        break
+    elif "exit" in query:
+        speak("Have a nice day ! ")
+        break
     elif "bye" in query:
         speak("Have a nice day ! ")
         break
