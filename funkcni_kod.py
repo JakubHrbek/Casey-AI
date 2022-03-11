@@ -1,5 +1,4 @@
-###Import potřebných modulů (Python/PIP)                #### POSLEDNÍ ÚPRAVA 11.3.2022 - Skeetek (Ruslan) ####
-import imp
+###Import potřebných modulů (Python/PIP)                #### POSLEDNÍ ÚPRAVA 11.3.2022 - vaclavpi (vapi) ####
 import pyttsx3
 import speech_recognition as sr # rozeznání mluvy
 import wikipedia 
@@ -15,14 +14,9 @@ import ssl
 import certifi
 import time
 import os
-import ssl
-import certifi
-import time
-import os
 from PIL import Image
 import subprocess
 import pyautogui #screenshot
-import pyttsx3
 import bs4 as bs
 import urllib.request
 
@@ -36,6 +30,8 @@ class person:                                                                   
 engine = pyttsx3.init('sapi5')                                                      # Nastavení hlasového zadávání
 voices = engine.getProperty('voices')                                               #
 engine.setProperty('voice', voices[0].id)                                           #
+rate = engine.getProperty('rate')                                                   #
+engine.setProperty('rate', 140)                                                     #
                                                                                   #####
 def speak(audio):                                                                   # Nastavení audia                       
     engine.say(audio)                                                               #
@@ -120,15 +116,15 @@ while True:
                 for ar in article:                                                  #
                     results.append(ar["title"])                                     #
                 for i in range(len(results)):                                       #
-                    print(i + 1, results[i])                                        #
-                speak("here are the top trending news....!")                        #
-                speak("Do yo want me to read!")                                     #
+                    print(i + 0.5, results[i])                                      #
+                speak("here are the top trending news....!!")                       #
+                speak("Do yo want me to read!!!")                                   #
                 reply = command().lower()                                           #
                 reply = str(reply)                                                  #
                 if reply == "yes":                                                  #
                     speak(results)                                                  #
                 else:                                                               #
-                    speak('ok!')                                                    #
+                    speak('ok!!!!')                                                 #
                     pass                                                            #
             trndnews()                                                              #
                                                                                   #####
