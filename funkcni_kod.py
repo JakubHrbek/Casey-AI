@@ -64,10 +64,10 @@ while True:
         'No, I love spending time thinking about my crush wifi']                    #
                                                                                   #####
     elif 'hate' in query:                                                           # 3. FUNKCE: Prostě něco navíc
-        speak("I hate when people called me a machine")                             #
+        speak("I hate when people call me a machine")                             #
                                                                                   #####
     elif 'love' in query:                                                           # 4. FUNKCE: Prostě něco navíc
-        speak("I loves to chat with machines like you")                             #
+        speak("I love to chat with machines like you")                             #
                                                                                   #####
     elif 'greeting' in query:                                                       # 5. FUNKCE: Pozdrav
         speak(f"I'm very well, thanks for asking {person.name}")                    #
@@ -88,7 +88,7 @@ while True:
         query = query.replace('weather',"")                                         #
         url = "https://www.google.com/search?sxsrf=ACYBGNSQwMLDByBwdVFIUCbQqya-ET7AAA%3A1578847393212&ei=oUwbXtbXDN-C4-EP-5u82AE&q=weather&oq=weather&gs_l=psy-ab.3..35i39i285i70i256j0i67l4j0i131i67j0i131j0i67l2j0.1630.4591..5475...1.2..2.322.1659.9j5j0j1......0....1..gws-wiz.....10..0i71j35i39j35i362i39._5eSPD47bv8&ved=0ahUKEwiWrJvwwP7mAhVfwTgGHfsNDxsQ4dUDCAs&uact=5"
         webbrowser.get().open(url)                                                  #
-        speak("Here is what I found for on google")                                 #
+        speak(f"Here is what I found for {query} on google")                                 #
                                                                                   #####
     elif 'time' in query:                                                           # 9. FUNKCE: Informace o čase
         time = ctime().split(" ")[3].split(":")[0:2]                                #
@@ -118,7 +118,7 @@ while True:
                 for i in range(len(results)):                                       #
                     print(i + 0.5, results[i])                                      #
                 speak("here are the top trending news....!!")                       #
-                speak("Do yo want me to read!!!")                                   #
+                speak("Do you want me to read!!!")                                   #
                 reply = command().lower()                                           #
                 reply = str(reply)                                                  #
                 if reply == "yes":                                                  #
@@ -129,31 +129,31 @@ while True:
             trndnews()                                                              #
                                                                                   #####
     elif 'game' in query:                                                           # 13. FUNKCE: Hra- kámen, nůžky, papír | ZATÍM NEFUNKČNÍ
-        speak('choose among rock paper or scissor')                                 #
-        moves=["rock", "paper", "scissor"]                                          #
+        speak('choose rock paper or scissorss')                                 #
+        moves=["rock", "paper", "scissors"]                                          #
         cmove=random.choice(moves)                                                  #
         pmove=speak                                                                 #
         speak("The computer chose " + cmove)                                        #
         speak("You chose " + pmove)                                                 #                                            
         if pmove==cmove:                                                            #
             speak("the match is draw")                                              #
-        elif pmove== "rock" and cmove== "scissor":                                  #
+        elif pmove== "rock" and cmove== "scissors":                                  #
             speak("Player wins")                                                    #
         elif pmove== "rock" and cmove== "paper":                                    #
             speak("Computer wins")                                                  #
         elif pmove== "paper" and cmove== "rock":                                    #
             speak("Player wins")                                                    #
-        elif pmove== "paper" and cmove== "scissor":                                 #
+        elif pmove== "paper" and cmove== "scissors":                                 #
             speak("Computer wins")                                                  #
-        elif pmove== "scissor" and cmove== "paper":                                 #
+        elif pmove== "scissors" and cmove== "paper":                                 #
             speak("Player wins")                                                    #
-        elif pmove== "scissor" and cmove== "rock":                                  #
+        elif pmove== "scissors" and cmove== "rock":                                  #
             speak("Computer wins")                                                  #
                                                                                   #####
     elif 'bye' in query:                                                            # 15. FUNKCE: Konec
-        speak("Have a nice day ! ")                                                 #
+        speak("Have a nice day! ")                                                 #
         break                                                                       #
 #####################################################################################
 
     else:                                                                           #  Program nerozumí                                                                    
-        speak("I don't understand what you are saying")                             #
+        speak("I don't understand what you're saying")                             #
