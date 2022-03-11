@@ -1,4 +1,5 @@
 ###Import potřebných modulů (Python/PIP)                #### POSLEDNÍ ÚPRAVA 10.3.2022 - vaclavpi (vapi) ####
+import imp
 import pyttsx3
 import speech_recognition as sr # rozeznání mluvy
 import wikipedia 
@@ -27,6 +28,11 @@ import urllib.request
 
 ###########################################################################################
 
+class person:                                                                       # Nastavení jména
+    name = '???'                                                                    #
+    def setName(self, name):                                                        #
+        self.name = name                                                            #
+
 engine = pyttsx3.init('sapi5')                                                      # Nastavení hlasového zadávání
 voices = engine.getProperty('voices')                                               #
 engine.setProperty('voice', voices[0].id)                                           #
@@ -43,7 +49,7 @@ def command():                                                                  
             audio=r.listen(source)                                                  #
             try:                                                                    #
                 query = r.recognize_google(audio)                                   #
-                print(f"master:{query}")                                            #
+                print(f"{person.name}:{query}")                                            #
                 return query                                                        #
                 break                                                               #
             except:                                                                 #
@@ -68,7 +74,7 @@ while True:
         speak("I loves to chat with machines like you")                             #
                                                                                   #####
     elif 'greeting' in query:                                                       # 5. FUNKCE: Pozdrav
-        speak(f"I'm very well, thanks for asking {person_obj.name}")                #
+        speak(f"I'm very well, thanks for asking {person.name}")                #
                                                                                   #####
     elif 'search for' in query:                                                     # 6. FUNKCE: Vyhledávání na Googlu
         query = query.replace('search for',"")                                      #
@@ -148,7 +154,7 @@ while True:
         elif pmove== "scissor" and cmove== "rock":                                  #
             speak("Computer wins")                                                  #
                                                                                   #####
-    elif "bye" in query:                                                            # 14. FUNKCE: Konec
+    elif 'bye' in query:                                                            # 15. FUNKCE: Konec
         speak("Have a nice day ! ")                                                 #
         break                                                                       #
 #####################################################################################
