@@ -1,4 +1,4 @@
-###Import potřebných modulů (Python/PIP)                #### POSLEDNÍ ÚPRAVA 10.3.2022 - vaclavpi (vapi) ####
+###Import potřebných modulů (Python/PIP)                #### POSLEDNÍ ÚPRAVA 11.3.2022 - Skeetek (Ruslan) ####
 import imp
 import pyttsx3
 import speech_recognition as sr # rozeznání mluvy
