@@ -49,7 +49,7 @@ def command():                                                                  
             audio=r.listen(source)                                                  #
             try:                                                                    #
                 query = r.recognize_google(audio)                                   #
-                print(f"{person.name}:{query}")                                            #
+                print(f"{person.name}:{query}")                                     #
                 return query                                                        #
                 break                                                               #
             except:                                                                 #
@@ -74,7 +74,7 @@ while True:
         speak("I loves to chat with machines like you")                             #
                                                                                   #####
     elif 'greeting' in query:                                                       # 5. FUNKCE: Pozdrav
-        speak(f"I'm very well, thanks for asking {person.name}")                #
+        speak(f"I'm very well, thanks for asking {person.name}")                    #
                                                                                   #####
     elif 'search for' in query:                                                     # 6. FUNKCE: Vyhledávání na Googlu
         query = query.replace('search for',"")                                      #
