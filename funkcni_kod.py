@@ -120,7 +120,7 @@ while True:
                 for ar in article:                                                  #
                     results.append(ar["title"])                                     #
                 for i in range(len(results)):                                       #
-                    print(i + 1, results[i])                                        #
+                    print(i + 0.5, results[i])                                      #
                 speak("here are the top trending news....!!")                       #
                 speak("Do yo want me to read!!!")                                   #
                 reply = command().lower()                                           #
