@@ -1,4 +1,4 @@
-###Import potřebných modulů (Python/PIP)                #### POSLEDNÍ ÚPRAVA 11.3.2022 - vaclavpi (vapi) ####
+                                                                                    # Import potřebných modulů (Python/PIP)
 import pyttsx3
 import speech_recognition as sr # rozeznání mluvy
 import wikipedia 
@@ -13,13 +13,13 @@ import webbrowser # Otevření prohlížeče
 import ssl
 import certifi
 import time
-import os
+import os                                                                           #
 from PIL import Image
-import subprocess
+import subprocess                                                                   #
 import pyautogui #screenshot
-import bs4 as bs
+import bs4 as bs                                                                    #
 import urllib.request
-
+                                                                                    #
 ###########################################################################################
 
 class person:                                                                       # Nastavení jména
@@ -31,7 +31,7 @@ engine = pyttsx3.init('sapi5')                                                  
 voices = engine.getProperty('voices')                                               #
 engine.setProperty('voice', voices[0].id)                                           #
 rate = engine.getProperty('rate')                                                   #
-engine.setProperty('rate', 140)                                                     #
+engine.setProperty('rate', 150)                                                     #
                                                                                   #####
 def speak(audio):                                                                   # Nastavení audia                       
     engine.say(audio)                                                               #
@@ -129,30 +129,71 @@ while True:
             trndnews()                                                              #
                                                                                   #####
     elif 'game' in query:                                                           # 13. FUNKCE: Hra- kámen, nůžky, papír | ZATÍM NEFUNKČNÍ
-        speak('choose rock paper or scissorss')                                 #
-        moves=["rock", "paper", "scissors"]                                          #
-        cmove=random.choice(moves)                                                  #
-        pmove=speak                                                                 #
-        speak("The computer chose " + cmove)                                        #
-        speak("You chose " + pmove)                                                 #                                            
-        if pmove==cmove:                                                            #
-            speak("the match is draw")                                              #
-        elif pmove== "rock" and cmove== "scissors":                                  #
-            speak("Player wins")                                                    #
-        elif pmove== "rock" and cmove== "paper":                                    #
-            speak("Computer wins")                                                  #
-        elif pmove== "paper" and cmove== "rock":                                    #
-            speak("Player wins")                                                    #
-        elif pmove== "paper" and cmove== "scissors":                                 #
-            speak("Computer wins")                                                  #
-        elif pmove== "scissors" and cmove== "paper":                                 #
-            speak("Player wins")                                                    #
-        elif pmove== "scissors" and cmove== "rock":                                  #
-            speak("Computer wins")                                                  #
+        user_action = input("Enter a choice (rock, paper, scissors): ")
+        possible_actions = ["rock", "paper", "scissors"]
+        computer_action = random.choice(possible_actions)
+        print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+
+        if user_action == computer_action:
+            print(f"Both players selected {user_action}. It's a tie!")
+        elif user_action == "rock":
+            if computer_action == "scissors":
+                print("Rock smashes scissors! You win!")
+            else:
+                print("Paper covers rock! You lose.")
+        elif user_action == "paper":
+            if computer_action == "rock":
+                print("Paper covers rock! You win!")
+            else:
+                print("Scissors cuts paper! You lose.")
+        elif user_action == "scissors":
+            if computer_action == "paper":
+                print("Scissors cuts paper! You win!")
+            else:
+                print("Rock smashes scissors! You lose.")                                                 #
                                                                                   #####
     elif 'bye' in query:                                                            # 15. FUNKCE: Konec
-        speak("Have a nice day! ")                                                 #
+        speak("Have a nice day! ")                                                  #
         break                                                                       #
+    elif 'help' in query:
+        print("I list the command options:")
+        print("----")
+        print("1.: Name")
+        print("2.: Are you single?")
+        print("3.: Hate")
+        print("4.: Love")
+        print("5.: Greeting")
+        print("6.: Search for ...")
+        print("7.: YouTube ...")
+        print("8.: Weather")
+        print("9.: Time")
+        print("10.: Who is ...?")
+        print("11.: Joke")
+        print("12.: News")
+        print("13.: Game")
+        print("----")
+        print("Say help or commands if you want to see possible commands")
+
+    elif 'commands' in query:
+        print("I list the command options:")
+        print("----")
+        print("1.: Name")
+        print("2.: Are you single?")
+        print("3.: Hate")
+        print("4.: Love")
+        print("5.: Greeting")
+        print("6.: Search for ...")
+        print("7.: YouTube ...")
+        print("8.: Weather")
+        print("9.: Time")
+        print("10.: Who is ...?")
+        print("11.: Joke")
+        print("12.: News")
+        print("13.: Game")
+        print("----")
+        print("Say help or commands if you want to see possible commands")
+
+
 #####################################################################################
 
     else:                                                                           #  Program nerozumí                                                                    
